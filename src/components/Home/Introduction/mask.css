@@ -1,0 +1,10 @@
+.mask{
+    mask-image: url(../../../assets/cursor.png);
+    background:#757de8;
+    mask-repeat: no-repeat;
+    mask-size: 50px;
+    color: #eee;
+}
+
+
+

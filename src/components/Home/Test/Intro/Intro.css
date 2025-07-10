@@ -1,0 +1,409 @@
+.intro-section {
+    height: 100vh;
+    min-height: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(to bottom, white, white, var(--intro-bg));
+}
+
+.intro-home {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.intro-img {
+    width: 30%;
+    padding: 5%;
+}
+
+.intro-img img {
+    border-radius: 10%;
+}
+
+.intro-img img:nth-of-type(2) {
+    display: none;
+}
+
+/*intro-text*/
+/*intro-text*/
+
+.intro-texts {
+    width: 60%;
+    padding: 5%;
+    font-family: 'Aleo', serif;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Tilt Neon', sans-serif;
+}
+
+.intro-texts {
+    font-size: 3rem;
+}
+
+.intro-texts div {
+    padding: 10px 0;
+}
+
+.intro-name {
+    font-size: 4rem;
+}
+
+.intro-name span {
+    color: var(--intro-bg)
+}
+
+.intro-profession {
+    font-size: 2.5rem;
+}
+
+.intro-background {
+    font-size: 2rem;
+}
+
+.intro-profession span,
+.intro-background span {
+    font-style: italic;
+    color: var(--intro-bg);
+}
+
+/*intro-buttons*/
+/*intro-buttons*/
+
+.intro-buttons button {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    border-radius: 25px;
+    border: 2px var(--intro-bg) solid;
+    color: white;
+    background-color: var(--intro-bg);
+}
+
+.intro-buttons button:nth-child(1) {
+    margin-right: 15px;
+}
+
+.intro-buttons a,
+.intro-buttons a:visited {
+    color: #fff;
+    padding: 15px 30px;
+}
+
+/*glow-on-hover*/
+/*glow-on-hover*/
+
+.intro-buttons button {
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border: none;
+    outline: none;
+}
+
+.intro-buttons button:before {
+    content: '';
+    background: linear-gradient(90deg, rgb(255, 0, 43), #09b409, rgb(255, 0, 43), #09b409);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(10px);
+    width: 100%;
+    height: 100%;
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 25px;
+}
+
+.intro-buttons button:hover:before {
+    opacity: 1;
+}
+
+.intro-buttons button:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    left: 0;
+    top: 0;
+    border-radius: 25px;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+
+.intro-buttons button:hover>a {
+    color: var(--intro-bg)
+}
+
+.intro-buttons button:hover:after {
+    opacity: 1;
+}
+
+/*active kyn*/
+/*active kyn*/
+
+.intro-buttons button:active>a {
+    color: var(--intro-bg);
+}
+
+.intro-buttons button:active:after {
+    opacity: 0;
+}
+
+
+/*animation*/
+/*animation*/
+
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+/*intro-icons*/
+/*intro-icons*/
+
+.intro-icons {
+    font-size: 2rem;
+}
+
+.intro-icons a {
+    margin-right: 10px;
+    padding: 10px;
+    color: var(--intro-green);
+}
+
+.intro-icons a:nth-last-child(1) {
+    margin-right: 0;
+}
+
+
+
+
+
+
+
+
+
+/* responsive */
+/* responsive */
+/* responsive */
+/* responsive */
+/* responsive */
+
+@media only screen and (max-width: 1280px) {
+    .intro-home {
+        width: 85%;
+    }
+
+    .intro-img {
+        width: 35%;
+        padding: 4%;
+    }
+
+    .intro-texts {
+        padding: 4%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .intro-home {
+        width: 90%;
+    }
+
+    .intro-img {
+        width: 40%;
+    }
+
+    .intro-texts {
+        width: 60%;
+    }
+
+    .intro-texts {
+        font-size: 2.4rem;
+    }
+
+    .intro-texts div {
+        padding: 8px 0;
+    }
+
+    .intro-name {
+        font-size: 3.5rem;
+    }
+
+    .intro-profession {
+        font-size: 2rem;
+    }
+
+    .intro-background {
+        font-size: 1.6rem;
+    }
+
+    .intro-buttons button {
+        font-size: 1.2rem;
+        padding: 12px 15px;
+        border-radius: 25px;
+    }
+
+    .intro-buttons button:nth-child(1) {
+        margin-right: 10px;
+    }
+
+    .intro-buttons a,
+    .intro-buttons a:visited {
+        color: #fff;
+        padding: 10px 20px;
+    }
+}
+
+
+
+/* /769  /769 */
+/* /769  /769 */
+/* /769  /769 */
+/* /769  /769 */
+/* /769  /769 */
+
+
+@media only screen and (max-width: 768px) {
+    .intro-section {
+        max-height: 900px;
+    }
+
+    .intro-texts {
+        font-size: 1.8rem;
+    }
+
+    .intro-texts div {
+        padding: 8px 0;
+    }
+
+    .intro-name {
+        font-size: 2.6rem;
+    }
+
+    .intro-profession {
+        font-size: 1.5rem;
+    }
+
+    .intro-background {
+        font-size: 1.2rem;
+    }
+
+    .intro-buttons button {
+        font-size: 1rem;
+        padding: 10px 12px;
+        border-radius: 30px;
+    }
+
+    .intro-buttons a,
+    .intro-buttons a:visited {
+        padding: 10px 12px;
+    }
+}
+
+
+
+
+
+
+/* 640 */
+/* 640 */
+/* 640 */
+/* 640 */
+/* 640 */
+
+@media only screen and (max-width: 640px) {
+    .intro-section {
+        max-height: none;
+    }
+
+    .intro-home {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .intro-texts {
+        width: 80%;
+    }
+
+    .intro-img img:nth-of-type(1) {
+        display: none;
+    }
+
+    .intro-img img:nth-of-type(2) {
+        display: block;
+    }
+}
+
+
+/* 500 */
+/* 500 */
+/* 500 */
+/* 500 */
+/* 500 */
+
+
+
+@media only screen and (max-width: 500px) {
+
+    .intro-texts {
+        font-size: 1.5rem;
+    }
+
+    .intro-name {
+        font-size: 2rem;
+    }
+
+    .intro-profession {
+        font-size: 1.2rem;
+    }
+
+    .intro-background {
+        font-size: 1rem;
+    }
+
+    .intro-buttons button {
+        font-size: 16px;
+        padding: 8px 10px;
+        border-radius: 30px;
+    }
+}
+
+
+/* 430 */
+/* 430 */
+/* 430 */
+/* 430 */
+/* 430 */
+
+
+
+@media only screen and (max-width: 430px) {
+
+
+    .intro-buttons button {
+        font-size: 12px;
+        padding: 8px 10px;
+        border-radius: 30px;
+    }
+}

@@ -1,0 +1,447 @@
+li {
+    list-style-type: none;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+#front-page-section {
+    position: relative;
+    height: 100vh;
+    /* min-height: 700px; */
+}
+
+.front-page-nav {
+    padding: 4px 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 180%;
+    align-items: center;
+    width: 97%;
+    margin: auto;
+}
+
+.add-border {
+    border-bottom: 1px var(--separator) solid;
+}
+
+.person {
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.person img {
+    width: 90px;
+    border-radius: 50%;
+    margin: 8px 15px 8px 0;
+}
+
+.icons {
+    display: flex;
+}
+
+.icons div {
+    font-size: 120%;
+    padding: 0 15px;
+}
+
+/* **************************** */
+/* texts */
+/* **************************** */
+
+.texts {
+    position: absolute;
+    bottom: var(--text-level);
+    width: 97%;
+    margin: auto;
+}
+
+.text-section {
+    width: 97%;
+    margin: auto;
+}
+
+.text {
+    position: relative;
+    left: 60px;
+    padding: 15px 25px 15px 15px;
+    margin-top: 8px;
+    font-size: 160%;
+    background-color: var(--text-background);
+    width: max-content;
+    border-bottom-right-radius: 35px;
+    border-top-right-radius: 35px;
+}
+
+.typing {
+    padding: 5px 17px 5px 17px;
+    font-size: 160%;
+    margin-top: 8px;
+    background-color: var(--text-background);
+    border-radius: 70px;
+    display: flex;
+    justify-content: space-evenly;
+    width: max-content;
+    transform: translateX(60px);
+    gap:5px;
+}
+
+.typing div {
+    color: rgb(85, 85, 85);
+    scale: 1.3;
+    transform: translateY(-6px);
+    position: relative;
+}
+
+.typing div:nth-child(1) {
+    animation: typingOne 2s ease-in 0.2s infinite;
+}
+
+.typing div:nth-child(2) {
+    animation: typingOne 2s ease-in 0.3s infinite;
+}
+
+.typing div:nth-child(3) {
+    animation: typingOne 2s ease-in 0.5s infinite;
+}
+
+@keyframes typingOne {
+    0% {
+        bottom: 0;
+    }
+
+    15% {
+        bottom: 10px;
+    }
+
+    30% {
+        bottom: 0px;
+    }
+
+    100% {
+        bottom: 0px;
+    }
+}
+
+
+
+li.text:nth-of-type(1) {
+    border-top-left-radius: 30px;
+}
+
+li.text:nth-last-of-type(1) {
+    border-bottom-left-radius: 30px;
+}
+
+.texts img {
+    width: 50px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+/* **************************** */
+/* text-bar */
+/* **************************** */
+
+
+.text-bar {
+    font-size: 200%;
+    border: var(--separator) 1px solid;
+    border-radius: 45px;
+    position: absolute;
+    bottom: 0%;
+    box-sizing: border-box;
+    width: 97%;
+    margin: 10px 0;
+}
+
+.text-bar-div {
+    display: flex;
+    margin: 5px;
+}
+
+.text-bar div {
+    padding: 2px 7px 7px 7px;
+}
+
+.input {
+    width: 95%;
+}
+
+.text-bar input {
+    font-size: 22px;
+    border: none;
+    margin: auto;
+}
+
+.text-bar input:focus {
+    outline: none;
+}
+
+.icon {
+    vertical-align: bottom;
+    position: relative;
+    top:10px;
+}
+
+.add-padding {
+    padding: 0 20px;
+}
+
+/* scroll-down */
+
+.scroll-down {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: var(--text-level);
+    font-size: 200%;
+    display: flex;
+    align-items: center;
+}
+
+.scroll-down span{
+    font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* responsive */
+/* responsive */
+/* responsive */
+/* responsive */
+/* responsive */
+
+@media only screen and (max-width: 1024px) {
+
+    /* nav */
+    /* nav */
+    /* nav */
+
+    .front-page-nav {
+        font-size: 160%;
+    }
+
+    .person img {
+        width: 90px;
+    }
+
+    .icons div {
+        font-size: 110%;
+        padding: 0 15px;
+    }
+
+    /* **************************** */
+    /* texts */
+    /* **************************** */
+
+
+    .text {
+        padding: 13px 23px 13px 13px;
+        margin-top: 8px;
+        font-size: 140%;
+        border-bottom-right-radius: 33px;
+        border-top-right-radius: 33px;
+    }
+
+    .typing {
+        padding: 6px 13px 6px 13px;
+        font-size: 140%;
+        border-radius: 65px;
+    }
+
+    /* **************************** */
+    /* text-bar */
+    /* **************************** */
+
+    .text-bar {
+        border-radius: 35px;
+    }
+}
+
+
+/* 640 */
+/* 640 */
+/* 640 */
+/* 640 */
+/* 640 */
+
+
+
+@media only screen and (max-width: 640px) {
+
+    /* nav */
+    /* nav */
+    /* nav */
+
+    .front-page-nav {
+        font-size: 140%;
+    }
+
+    .person img {
+        width: 75px;
+    }
+
+    .icons div {
+        font-size: 110%;
+    }
+
+    /* **************************** */
+    /* texts */
+    /* **************************** */
+
+
+    .text {
+        font-size: 120%;
+        left: 50px;
+    }
+
+    .texts {
+        bottom: 85px;
+    }
+
+    .typing {
+        font-size: 120%;
+    }
+
+    /* **************************** */
+    /* text-bar */
+    /* **************************** */
+
+    .text-bar {
+        font-size: 160%;
+        margin: 10px 0;
+    }
+
+    /* scroll-down */
+
+    .scroll-down {
+        display: none;
+    }
+}
+
+
+/* 500 */
+/* 500 */
+/* 500 */
+/* 500 */
+/* 500 */
+
+
+
+@media only screen and (max-width: 500px) {
+
+
+
+    /* **************************** */
+    /* texts bar*/
+    /* **************************** */
+
+    .text-bar {
+        font-size: 140%;
+        margin: 10px 0;
+    }
+
+    .input {
+        width: 60%;
+    }
+}
+
+/* 440 */
+/* 440 */
+/* 440 */
+/* 440 */
+/* 440 */
+
+
+
+@media only screen and (max-width: 440px) {
+
+    /* nav */
+    /* nav */
+    /* nav */
+    /* #front-page-section {
+        min-height: 550px;
+    } */
+
+
+    .person img {
+        width: 60px;
+    }
+
+    .icons div {
+        font-size: 100%;
+        padding: 0 8px;
+    }
+
+    /* **************************** */
+    /* texts */
+    /* **************************** */
+
+
+    .text {
+        padding: 11px 15px 11px 11px;
+        font-size: 110%;
+    }
+
+    .typing {
+        font-size: 110%;
+        margin-top: 13px;
+    }
+
+    .texts img {
+        width: 40px;
+    }
+
+    .text {
+        left: 42px;
+    }
+
+    /* **************************** */
+    /* text-bar */
+    /* **************************** */
+
+    .text-bar {
+        border-radius: 35px;
+    }
+
+    .input {
+        width: 58%;
+    }
+}
+
+/* 380 */
+/* 380 */
+/* 380 */
+/* 380 */
+/* 380 */
+
+@media only screen and (max-width: 380px) {
+
+
+    /* **************************** */
+    /* texts bar*/
+    /* **************************** */
+
+    .input {
+        width: 50%;
+    }
+
+}

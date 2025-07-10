@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #DBDBDB;
+    /* RGB values */
+    --color-focus: #EA2F14;
+    --color-accent: 245 158 11; 
+
+    --font-hero: "Lato",
+        sans-serif; 
+
+}
+
+@layer base {
+    html {
+        box-sizing: border-box;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: inherit;
+    } }
+
+html,
+body {
+    background-color: #222;
+    height: max-content;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+            'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+            sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+:root {
+    --separator: rgb(219, 219, 219);
+    --text-background: rgb(239, 239, 239);
+    --text-level: 95px;
+    --intro-bg: #f3abb7;
+    --intro-bg-darken: #b57f88;
+    --intro-bg-dark: #f14c68;
+    --intro-bg-light: #ffc8d2;
+    --intro-green: #829b65;
+    --color-bg: #e5e5e5;
+    --color-bg-dark: #797979;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace; }
+
+
+        
+
