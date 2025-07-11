@@ -16,8 +16,11 @@ import { CgChevronDoubleDown } from 'react-icons/cg'
 
 
 type SetStateBoolean = Dispatch<SetStateAction<boolean>>;
+type Props ={
+    introSectionRef:React.RefObject<HTMLDivElement | null>
+}
 
-const FrontPage = () => {
+const FrontPage = ({introSectionRef}:Props) => {
 
     const [textRendered,setTextRendered] = useState<boolean>(false);
     
@@ -127,7 +130,9 @@ const FrontPage = () => {
                                 <motion.div
                                     animate={{ opacity: [1, 0, 1] }}
                                     transition={{ repeat: Infinity, duration: 1.5 }}
-                                    className='scroll-down'><span>Scroll Down </span><CgChevronDoubleDown  /></motion.div>
+                                    className='scroll-down cursor-pointer'
+                                    onClick={()=>introSectionRef.current?.scrollIntoView({ behavior: "smooth" })}><span>
+                                    Scroll Down </span><CgChevronDoubleDown  /></motion.div>
                             </div>
                         }
                     </div>

@@ -52,7 +52,7 @@ const Main =()=>{
 
 
     return <div className="Main">
-        <FrontPage />
+        <FrontPage introSectionRef={introSectionRef}/>
         <Introduction color_targetRef={color_targetRef} appear_targetRef={appear_targetRef} introSectionRef={introSectionRef}/>
         <NavCircle  
         isInView_Appear={isInView_Appear}

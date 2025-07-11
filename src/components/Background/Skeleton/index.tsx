@@ -1,12 +1,49 @@
 import NavLink from "../../Home/Introduction/NavLink"
 import {motion} from "framer-motion"
 import hero from '../../../assets/hero.jpg'
+import { useEffect, useRef, useState } from "react"
+
+const textArray = [
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur cupiditate cum cumque sunt magnam ab placeat, facere officia qui hic, delectus magni dicta beatae nam veniam saepe perferendis rem asperiores?Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur cupiditate cum cumque sunt magnam ab placeat, facere officia qui hic, delectus magni dicta beatae nam veniam saepe perferendis rem asperiores?",
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur cupiditate cum cumque sunt magnam ab placeat, facere officia qui hic, delectus magni dicta beatae nam veniam saepe perferendis rem asperiores?Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur cupiditate cum cumque sunt magnam ab placeat, facere officia qui hic, delectus magni dicta beatae nam veniam saepe perferendis rem asperiores?",
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur cupiditate cum cumque sunt magnam ab placeat, facere officia qui hic, delectus magni dicta beatae nam veniam saepe perferendis rem asperiores?Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur cupiditate cum cumque sunt magnam ab placeat, facere officia qui hic, delectus magni dicta beatae nam veniam saepe perferendis rem asperiores?",
+]
 
 
 const Background = () => {
    
+    const containerRef=useRef<HTMLDivElement>(null);
 
+    const [activeIndex,setActiveIndex] = useState<number>(0);
 
+    const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+    useEffect(()=>{
+        const observer = new IntersectionObserver(
+            (entries)=>{
+                entries.forEach((entry)=>{
+                    const index=Number(entry.target.getAttribute("data-index"));
+                    if(entry.isIntersecting&&entry.intersectionRatio > 0.9){
+                        setActiveIndex(index);
+                    }
+                })
+            },
+            {
+                root:containerRef.current,
+                threshold: 0.9,
+            }
+        );
+
+        sectionRefs.current.forEach((section) => {
+            if (section) observer.observe(section);
+          });
+      
+          return () => {
+            sectionRefs.current.forEach((section) => {
+              if (section) observer.unobserve(section);
+            });
+          };
+    },[])
 
  
 
@@ -57,15 +94,32 @@ const Background = () => {
         <div className="h-[90%] w-screen  fixed top-[100px] left-0  text-[#aaa] flex">
             {/*sidebar */}
             <div className="text-3xl w-[50%] ml-[10%] font-bold  uppercase">
-                <div className="py-[20px] text-[#fff] text-5xl my-[10px]">Who I Am, What I can do</div>
-                <div className="py-[20px]  ">How I Get Into Tech</div>
-                <div className="py-[20px]  ">Passion, Purpose, and Personality</div>
+                <div className={` pb-[30px]  ${
+                    activeIndex === 0 ? "text-[#fff] text-5xl my-[10px]": ""
+                }`}>Who I Am, What I can do</div>
+                <div className={` pb-[30px] ${
+                    activeIndex === 1 ? "text-[#fff] text-5xl my-[10px]": ""
+                }`}>How I Get Into Tech</div>
+                <div className={`  pb-[30px] ${
+                    activeIndex === 2 ? "text-[#fff] text-5xl my-[10px]": ""
+                }`}>Passion, Purpose, and Personality</div>
                 <div className="w-[70%] overflow-hidden rounded-lg mt-[40px]"><img src={hero} alt="" /></div>
             </div>
             <div className="w-[50%] bg-[#0006] h-full text-2xl px-[30px] py-5  overflow-y-scroll pr-[10%] text-justify">
-                <div className="mb-[50px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet suscipit eius officiis blanditiis reiciendis modi nostrum doloremque ea, quis, veritatis aperiam excepturi at beatae, dolorem nulla a ipsam! Deserunt, ad? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati consequatur sit ex tempore beatae architecto cum laudantium quas, facilis, animi a, laborum expedita doloribus ipsum quae veritatis ab illum quia.</div>
-                <div className="mb-[50px]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis temporibus, enim error sapiente exercitationem nihil tempore nam iusto itaque iure placeat officiis eius, ullam nisi. Sapiente accusamus illum ratione ipsam! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem consectetur inventore quaerat, nemo est nihil, vel placeat eveniet deleniti corporis optio omnis aut, voluptatum ipsa odio iure. Quasi, numquam maxime?</div>
-                <div className="mb-[500px]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit soluta perferendis atque reprehenderit voluptatibus dignissimos nemo. Voluptates tenetur facere obcaecati eligendi illum exercitationem dolores placeat, sunt harum veniam dicta voluptas! Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, neque. Cupiditate nam eum reprehenderit, ipsa, deleniti dolore earum quia ullam sequi consequuntur quae nisi tempora incidunt debitis alias? Dolor, nam.</div>
+            {textArray.map((text, index) => (
+                <motion.div
+                key={index}
+                ref={(el) => {
+                    sectionRefs.current[index] = el;
+                  }}
+                data-index={index}
+                className={` mb-[50px] ${
+                    activeIndex === index ? "text-[#5d5fe1] ": "text-[#aaa]"
+                }`}
+                >
+                {text}
+                </motion.div>
+      ))}
             </div>
         </div>
         
