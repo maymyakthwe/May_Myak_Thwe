@@ -5,8 +5,8 @@ import { CiLinkedin } from "react-icons/ci";
 import { SiGmail } from "react-icons/si";
 import PixelProgressBar from '../Home/ProgressBar';
 import { useRef, useState } from 'react';
-import NavLink from '../Home/Introduction/NavLink';
 import emailjs from '@emailjs/browser'
+import NavBar from '../Home/NavBar';
 
 
 
@@ -68,14 +68,9 @@ const Main =()=>{
     className='w-screen h-max min-h-screen bg-[#111] mx-auto  '
     >
         {/* nav bar */}
-        <div  className='fixed top-0 w-screen  whitespace-nowrap text-center flex  items-center text-xl text-[#f3f3f3] justify-between px-[100px] z-[1000] border-b-1 border-[#222] py-[30px] bg-[#111]'>
-            <div><NavLink><a href="/">@May — Protfolio</a></NavLink></div>
-            <div className='flex items-center'>
-          <li ><NavLink><a href="/work">Work</a></NavLink></li>
-          <li ><NavLink><a href="/background">Background</a></NavLink></li>
-          <li ><NavLink><a href="/contact">Contact</a></NavLink></li> 
+        <div  className='fixed top-0 w-screen  whitespace-nowrap text-center  text-xl text-[#f3f3f3]  px-[100px] z-[1000] border-b-1 border-[#222] py-[30px] bg-[#111]'>
+            <NavBar/>
             </div>
-       </div>
       <motion.div
       
       className='pt-[120px] px-[20%] '>

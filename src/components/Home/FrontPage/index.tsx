@@ -78,9 +78,9 @@ const FrontPage = ({introSectionRef}:Props) => {
   return (
         <motion.section  
         id='front-page-section' 
-        className='bg-white z-[1200]' >
+        className='bg-white z-[1200] min-h-[700px]' >
                     <div className='add-border'>
-                        <div className='front-page-nav'>
+                        <div className='front-page-nav bg-white z-[1000] relative'>
                             <div className='person'>
                                 <img src={profile} alt="profile-pic" />
                                 <div className='name'>May Myak Thwel</div>

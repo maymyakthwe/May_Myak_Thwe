@@ -10,6 +10,11 @@
     --font-hero: "Lato",
         sans-serif; 
 
+        --breakpoint-xl-plus:90rem;
+        --breakpoint-lg-plus:72rem;
+        --breakpoint-sm-plus:42rem;
+        --breakpoint-xs:26rem;
+
 }
 
 @layer base {

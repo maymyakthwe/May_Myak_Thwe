@@ -54,7 +54,7 @@ const Main =()=>{
     return <div className="Main">
         <FrontPage introSectionRef={introSectionRef}/>
         <Introduction color_targetRef={color_targetRef} appear_targetRef={appear_targetRef} introSectionRef={introSectionRef}/>
-        <NavCircle  
+         <NavCircle  
         isInView_Appear={isInView_Appear}
         open={open} 
         setOpen={setOpen} 
@@ -66,7 +66,7 @@ const Main =()=>{
         <Framework isInView_work_color={isInView_work_color} introSectionRef={introSectionRef}/>
         <Work work_color_targetRef={work_color_targetRef} isInView_work_color={isInView_work_color} introSectionRef={introSectionRef}/>
         <Skill contactRef={contactRef} introSectionRef={introSectionRef}/>
-        <Contact  contactRef={contactRef}/>
+       <Contact  contactRef={contactRef}/>
     </div>
 }
 

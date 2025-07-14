@@ -24,17 +24,17 @@ const Framework = ({introSectionRef,isInView_work_color}:Props) => {
     const FwSection = useTransform(FwSectionProgress,[0.9, 1], [0, -100])
 
   return (
-    <motion.section id='frame-work-section' style={{y:FwSection}} className='w-full h-[700px]  flex items-center' 
+    <motion.section id='frame-work-section' style={{y:FwSection}} className='w-full py-[60px] min-h-[700px]  flex items-center' 
     animate={{backgroundColor:!isInView_work_color?'#f3f3f3':'#111',
       color:!isInView_work_color?'#484848':'#eee'
     }}>
-        <div className="w-[80%] mx-auto  ">
+        <div className="xl:w-[80%] mx-auto lg:w-[85%] w-[90%]">
           
-            <div className="w-full flex pb-[50px] flex-wrap justify-between">
-                <div className="text-5xl w-[40%] font-bold pr-[40px] mb-[20px] leading-[1.35]"> 
+            <div className="w-full flex pb-[50px] flex-wrap justify-between sm:flex-row flex-col ">
+                <div className="xl:text-5xl sm:w-[40%] font-bold mb-[20px] leading-[1.35] lg:text-4xl text-3xl "> 
 
-                  {animationArray.map((a)=>{
-                    return <span className="relative overflow-hidden inline-block pr-5">
+                  {animationArray.map((a,idx)=>{
+                    return <span key={idx} className="relative overflow-hidden inline-block pr-5 ">
                     <motion.span className="block"
                     initial={{ y: '80%' }}
                     whileInView={{ y: 0 }}
@@ -45,16 +45,17 @@ const Framework = ({introSectionRef,isInView_work_color}:Props) => {
                   })}
                   
                 </div>
-                <div className="text-xl leading-[1.8] pt-2 w-[50%]">I started my journey as a self-taught web developer, driven by curiosity and a passion for building beautiful, functional web experiences. Over time, that passion evolved into purpose.</div>
+                <div className="lg:text-xl leading-[1.8] lg:pt-2 sm:w-[50%] md:pt-0 md:text-lg sm:text-[14px]">I started my journey as a self-taught web developer, driven by curiosity and a passion for building beautiful, functional web experiences. Over time, that passion evolved into purpose.</div>
             </div>
 
-            <div className="flex flex-wrap justify-between">
-              <div className="text-xl text-justify w-[40%] mb-5 leading-[1.8] ">As a junior web developer, I see every project as an opportunity to grow. What I&#8217;m truly seeking is a mentorship or internship where I can immerse myself in a professional development environment.
+            <div className="flex flex-wrap justify-between sm:flex-row flex-col ">
+              <div className="lg:text-xl text-justify sm:w-[40%] mb-5 leading-[1.8] md:text-lg sm:text-[14px] sm:block hidden">As a junior web developer, I see every project as an opportunity to grow. What I&#8217;m truly seeking is a mentorship or internship where I can immerse myself in a professional development environment.
               </div>
+              
 
-              <div className=" text-2xl grid grid-cols-3 gap-5 mb-[40px] font-medium w-[50%] text-[#a7a7a7]">
-                  {techStackArray.map((a)=>{
-                    return <div className="overflow-hidden">
+              <div className=" text-xl grid grid-cols-3 gap-5 mb-[40px] font-medium sm:w-[50%] text-[#a7a7a7] sm:text-2xl">
+                  {techStackArray.map((a,idx)=>{
+                    return <div key={idx} className="overflow-hidden">
                     <motion.div 
                     initial={{ y: '80%' }}
                     whileInView={{ y: 0 }}
@@ -63,6 +64,11 @@ const Framework = ({introSectionRef,isInView_work_color}:Props) => {
                     >{a}</motion.div>
                   </div>
                   })}
+              </div>
+
+
+
+              <div className="lg:text-xl text-justify sm:w-[40%] mb-5 leading-[1.8] md:text-lg sm:text-[14px] sm:hidden block">As a junior web developer, I see every project as an opportunity to grow. What I&#8217;m truly seeking is a mentorship or internship where I can immerse myself in a professional development environment.
               </div>
             </div>
            

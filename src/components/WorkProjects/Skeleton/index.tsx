@@ -1,9 +1,9 @@
 import { useRef } from 'react'
-import NavLink from '../../Home/Introduction/NavLink'
 import { WorkArray } from './workArray'
 import WorkPrototype from './workPrototype'
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import {motion} from 'framer-motion'
+import NavBar from '../../Home/NavBar';
 
 const Skeleton = () => {
 
@@ -13,13 +13,8 @@ const Skeleton = () => {
     <div ref={scrollRef} className='w-screen h-[500vh] flex '>
         
         {/* nav bar */}
-        <div  className='fixed top-[40px] w-full  whitespace-nowrap text-center flex  items-center text-xl text-[#f3f3f3] justify-between px-[100px] z-[1000] border-b-1 border-[#222] pb-5'>
-            <div><NavLink><a href="/">@May — Protfolio</a></NavLink></div>
-            <div className='flex items-center'>
-          <li ><NavLink><a href="/work">Work</a></NavLink></li>
-          <li ><NavLink><a href="/background">Background</a></NavLink></li>
-          <li ><NavLink><a href="/contact">Contact</a></NavLink></li> 
-            </div>
+        <div  className='fixed top-[40px] w-full  whitespace-nowrap text-center  text-xl text-[#f3f3f3]  px-[100px] z-[1000] border-b-1 border-[#222] pb-5'>
+           <NavBar/>
        </div>
 
 

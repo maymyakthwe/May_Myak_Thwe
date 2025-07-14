@@ -57,9 +57,9 @@ const Contact = ({ contactRef }: Props) => {
       >
         <div>
           {/* Header */}
-          <div className="flex items-center gap-[30px] pb-[100px]">
+          <div className="flex items-center gap-[30px] pb-[100px] ">
             <div
-              className="w-[150px] h-[150px] rounded-full"
+              className="w-[150px] h-[150px] rounded-full shrink-0"
               style={{
                 backgroundImage: `url(${hero})`,
                 backgroundSize: 'cover',

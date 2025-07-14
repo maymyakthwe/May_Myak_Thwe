@@ -6,7 +6,7 @@ type Props = {
     onComplete:()=>void;
 };
 
-const PixelProgressBar = ({ duration = 1500 ,onComplete}: Props) => {
+const PixelProgressBar = ({ duration = 1200 ,onComplete}: Props) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
