@@ -1,6 +1,10 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import laptop from '../../../assets/laptop.png'
 import iPad from '../../../assets/iPad.png'
+import image1 from '../../../assets/1.png'
+import image2 from '../../../assets/3.png'
+import image3 from '../../../assets/6.png'
+import image4 from '../../../assets/8.png'
 import phone from '../../../assets/phone.png'
 import followerBuffet from '../../../assets/followerBuffet.mp4'
 import portFolio from '../../../assets/portfolio.mp4'
@@ -8,6 +12,10 @@ import followerPhone from '../../../assets/follower_phone.mp4'
 import DragSlider from '../dragSlider';
 
 const wordArray=['Follower Buffet is a sleek, single-page website designed for a fictional social media marketing service. This project was built in just one week as a hands-on learning experience to master the fundamentals of Framer Motion.It&#39;s a simple project, but it taught me how to bring static components to life and turn basic UIs into more engaging, dynamic experiences.',"This is the first full-stack website I built entirely on my own, using the MERN stack. It serves as a platform for managing animal shelter operations, showcasing pets for adoption, and handling user interactions.I implemented full CRUD operations, JWT-based authentication, secure user sessions, and handled complex many-to-many relationships in MongoDB. Since this project was created purely to study Node.js functionalities, I didn't focus on responsiveness and did not deploy it.","This portfolio was designed and developed in September 2024, marking one of my earliest steps into web development. I'm proud to include this version in my portfolio not for its perfection, but for what it represents—a clear snapshot of my skills before I began diving deeper into advanced tools and frameworks. Progress isn't always loud, but it's powerful—every small improvement compounds into something extraordinary over time."]
+
+const img = [
+    image1,image2,image3,image4
+]
 
 type Props = {
     introSectionRef:React.RefObject<HTMLDivElement | null>
@@ -61,9 +69,9 @@ const Work = ({introSectionRef,isInView_work_color,work_color_targetRef}:Props) 
             muted/>
         </motion.div>
       </div>
-      <div className='text-2xl text-justify w-[90%] lg:w-[28%] xl:w-[40%] xl:text-4xl pt-[100px] lg:py-0 '> 
+      <div className='text-2xl  w-[90%] lg:w-[28%] xl:w-[40%] xl:text-4xl pt-[100px] lg:py-0 '> 
       <div className=' font-bold mb-[30px] text-[#eee]  '> Follower Buffet <span className='text-[#5d5fe1]'>Social Media Marketing Landing Page</span></div>
-        <div className='xl:text-xl text-[16px]  text-[#a7a7a7]'>{truncateToWords(wordArray[0],40)}</div>
+        <div className='xl:text-xl text-[16px] text-justify text-[#a7a7a7]'>{truncateToWords(wordArray[0],40)}</div>
       <p className='text-[#a7a7a7] text-xl underline mt-3 cursor-pointer'><a href="">Read More</a></p>
 
       </div>
@@ -73,22 +81,22 @@ const Work = ({introSectionRef,isInView_work_color,work_color_targetRef}:Props) 
 
     <div className='px-[20px] flex-wrap w-[100%] py-[60px] lg:py-[120px] mx-auto flex  items-center justify-center lg:flex-row'>
       {/*FIRST TEXT*/}
-      <div className='text-2xl text-justify w-[90%] lg:w-[28%] xl:w-[40%] xl:text-4xl pt-[100px] lg:py-0 hidden lg:block'> 
+      <div className='text-2xl  w-[90%] lg:w-[28%] xl:w-[40%] xl:text-4xl pt-[100px] lg:py-0 hidden lg:block'> 
           <div className=' font-bold mb-[30px] text-[#eee]'> Furry Friends Refuge <span className='text-[#5d5fe1]'>Animal Shelter Website</span></div>
-          <div className='xl:text-xl text-[16px]  text-[#a7a7a7]'>{truncateToWords(wordArray[1],40)}</div>
+          <div className='xl:text-xl text-[16px] text-justify text-[#a7a7a7]'>{truncateToWords(wordArray[1],40)}</div>
           <p className='text-[#a7a7a7] text-xl underline mt-3 cursor-pointer'><a href="">Read More</a></p>
       </div>
 
 
       {/* IMG*/}
         <div className='w-[320px] sm-plus:w-[600px] aspect-video relative lg:ml-[40px] xl:ml-[60px]'>
-          <DragSlider/>
+          <DragSlider img={img} color={'#6366f1'}/>
         </div>
 
       {/*second TEXT*/}
-        <div className='text-2xl text-justify w-[90%] lg:w-[28%] xl:w-[40%] xl:text-4xl pt-[60px] lg:py-0 lg:hidden block'> 
-          <div className=' font-bold mb-[30px] text-[#eee]'> Furry Friends Refuge <span className='text-[#5d5fe1]'>Animal Shelter Website</span></div>
-          <div className='xl:text-xl text-[16px]  text-[#a7a7a7]'>{truncateToWords(wordArray[1],40)}</div>
+        <div className='text-2xl  w-[90%] lg:w-[28%] xl:w-[40%] xl:text-4xl pt-[60px] lg:py-0 lg:hidden block'> 
+          <div className=' font-bold mb-[30px] text-[#eee]'> Furry Friends Refuge <span className='text-[#5d5fe1] '>Animal Shelter Website</span></div>
+          <div className='xl:text-xl text-[16px] text-justify text-[#a7a7a7]'>{truncateToWords(wordArray[1],40)}</div>
           <p className='text-[#a7a7a7] text-xl underline mt-3 cursor-pointer'><a href="">Read More</a></p>
       </div>
       
@@ -111,9 +119,9 @@ const Work = ({introSectionRef,isInView_work_color,work_color_targetRef}:Props) 
         {/* here copy phone if needs */}
 
       </div>
-      <div className='text-2xl text-justify w-[90%] lg:w-[28%] xl:w-[40%] xl:text-4xl pt-[100px] lg:py-0   '> 
+      <div className='text-2xl  w-[90%] lg:w-[28%] xl:w-[40%] xl:text-4xl pt-[100px] lg:py-0   '> 
       <div className=' font-bold mb-[30px] text-[#eee]'>Previous Portfolio Website <span className='text-[#5d5fe1]'>- September 2024</span></div>
-       <div className='xl:text-xl text-[16px]  text-[#a7a7a7]'>{truncateToWords(wordArray[2],40)}</div>
+       <div className='xl:text-xl text-[16px] text-justify text-[#a7a7a7]'>{truncateToWords(wordArray[2],40)}</div>
         <p className='text-[#a7a7a7] text-xl underline mt-3 cursor-pointer'><a href="">Read More</a></p>
       </div>
     </div>

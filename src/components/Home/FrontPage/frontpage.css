@@ -70,7 +70,7 @@ ul {
     padding: 15px 25px 15px 15px;
     margin-top: 8px;
     font-size: 160%;
-    background-color: var(--text-background);
+    
     width: max-content;
     border-bottom-right-radius: 35px;
     border-top-right-radius: 35px;
@@ -80,7 +80,6 @@ ul {
     padding: 5px 17px 5px 17px;
     font-size: 160%;
     margin-top: 8px;
-    background-color: var(--text-background);
     border-radius: 70px;
     display: flex;
     justify-content: space-evenly;
@@ -90,7 +89,7 @@ ul {
 }
 
 .typing div {
-    color: rgb(85, 85, 85);
+    
     scale: 1.3;
     transform: translateY(-6px);
     position: relative;

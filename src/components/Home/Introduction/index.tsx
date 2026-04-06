@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import hero from '../../../assets/hero.jpg'
+import hero from '../../../assets/hero.png'
 import { useEffect, useRef, useState } from 'react';
 import './mask.css'
 import NavBar from '../NavBar';

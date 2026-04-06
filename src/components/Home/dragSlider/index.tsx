@@ -1,21 +1,19 @@
 import {  useState } from 'react'
-import image1 from '../../../assets/1.png'
-import image2 from '../../../assets/3.png'
-import image3 from '../../../assets/6.png'
-import image4 from '../../../assets/8.png'
+
 import Images from './Images'
 import {motion, useMotionValue} from 'framer-motion'
 import Dots from './Dots'
 
+type Props = {
+    img:string[]
+    color:string
+}
 
-const img = [
-    image1,image2,image3,image4
-]
 
 const dragBuffer = 50;
 const springOptions = {type:'spring', mass:3,stiffness:400, damping:50}
 
-const DragSlider = () => {
+const DragSlider = ({img,color}:Props) => {
     const [dragging,setDragging] = useState(false);
     console.log(dragging,"this doesnt have any meaning.");
     const [imgIndex,setImageIndex] = useState(0);
@@ -51,9 +49,9 @@ const DragSlider = () => {
         onDragStart={onDragStart}
         onDragEnd={onDragEnd}
         className='flex items-center w-full  cursor-grab active:cursor-grabbing'>
-            <Images  img={img} imgIndex={imgIndex}/>
+            <Images  img={img} imgIndex={imgIndex} color={color}/>
         </motion.div>
-        <Dots img={img} imgIndex={imgIndex} setImgIndex={setImageIndex}/>
+        <Dots color={color} img={img} imgIndex={imgIndex} setImgIndex={setImageIndex}/>
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PixelProgressBar from "../Home/ProgressBar";
 import Background from "./Skeleton";
+import SideBar from "../Home/SideBar";
 
 
 const BackgroundPage = () => {
@@ -23,6 +24,7 @@ const Main =()=>{
 
     return <div className="Main">
        <Background/>
+       <SideBar />
     </div>
 }
 

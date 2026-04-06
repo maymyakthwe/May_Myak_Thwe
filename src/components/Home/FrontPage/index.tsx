@@ -18,9 +18,10 @@ import { CgChevronDoubleDown } from 'react-icons/cg'
 type SetStateBoolean = Dispatch<SetStateAction<boolean>>;
 type Props ={
     introSectionRef:React.RefObject<HTMLDivElement | null>
+    isInView_work_color:boolean
 }
 
-const FrontPage = ({introSectionRef}:Props) => {
+const FrontPage = ({introSectionRef,isInView_work_color}:Props) => {
 
     const [textRendered,setTextRendered] = useState<boolean>(false);
     
@@ -78,9 +79,9 @@ const FrontPage = ({introSectionRef}:Props) => {
   return (
         <motion.section  
         id='front-page-section' 
-        className='bg-white z-[1200] min-h-[700px]' >
+        className={`${isInView_work_color?'bg-black':'bg-white'} z-[1200] min-h-[700px]`} >
                     <div className='add-border'>
-                        <div className='front-page-nav bg-white z-[1000] relative'>
+                        <div className={`front-page-nav ${isInView_work_color?'bg-black text-gray-200':'bg-white'} z-[1000] relative`}>
                             <div className='person'>
                                 <img src={profile} alt="profile-pic" />
                                 <div className='name'>May Myak Thwel</div>
@@ -92,23 +93,23 @@ const FrontPage = ({introSectionRef}:Props) => {
                             </div>
                         </div>
                     </div>
-                    <div className='text-section'>
-                        <motion.div style={{opacity:textOpacity,y:textY}} className='texts'>
-                            <ul>
-                                {renderTextOne && <li className="text">Hi</li>}
-                                {renderTextTwo && <li className="text">Are you a recruiter?</li>}
-                                {renderTextThree && <li className="text">Are you here to look for inspiration?</li>}
-                                {renderTextFour && <li className="text">Either Way</li>}
-                                {renderTextFive && <li className="text">You are in the right place</li>}
-                                {renderTextSix && <li className="text">Lets get started!</li>}
+                    <div className='text-section '>
+                        <motion.div style={{opacity:textOpacity,y:textY}} className={`texts `}>
+                            <ul >
+                                {renderTextOne && <li className={`text ${isInView_work_color?'bg-[#5d5d5d86] text-gray-200':'bg-[#efefef]'}`}>Hi</li>}
+                                {renderTextTwo && <li className={`text ${isInView_work_color?'bg-[#5d5d5d86] text-gray-200':'bg-[#efefef]'}`}>Are you a recruiter?</li>}
+                                {renderTextThree && <li className={`text ${isInView_work_color?'bg-[#5d5d5d86] text-gray-200':'bg-[#efefef]'}`}>Are you here to look for inspiration?</li>}
+                                {renderTextFour && <li className={`text ${isInView_work_color?'bg-[#5d5d5d86] text-gray-200':'bg-[#efefef]'}`}>Either Way</li>}
+                                {renderTextFive && <li className={`text ${isInView_work_color?'bg-[#5d5d5d86] text-gray-200':'bg-[#efefef]'}`}>You are in the right place</li>}
+                                {renderTextSix && <li className={`text ${isInView_work_color?'bg-[#5d5d5d86] text-gray-200':'bg-[#efefef]'}`}>Lets get started!</li>}
                             </ul>
                             <AnimatePresence>
-                                {typing && <motion.div
+                                {typing && <motion.div 
                                     animate={{ scale: 1, x: 60 }}
                                     initial={{ scale: 0, x: 60 }}
                                     exit={{ scale: 0, x: 60 }}
                                     transition={{ type: 'tween', duration: 0.3 }}
-                                    className="typing">
+                                    className={`typing ${isInView_work_color?'bg-[#5d5d5d86] text-gray-200':'bg-[#efefef]'}`}>
                                     <div>.</div>
                                     <div>.</div>
                                     <div>.</div>
@@ -117,7 +118,7 @@ const FrontPage = ({introSectionRef}:Props) => {
                             <img src={profile} alt="profile-pic" />
                         </motion.div>
                         <div className='text-bar'>
-                            <div className='text-bar-div'>
+                            <div className={`text-bar-div ${isInView_work_color?' text-gray-200':''}`}>
                                 <div><RiEmojiStickerLine className='icon' /></div>
                                 <div className='input'><input type="text" /></div>
                                 <div><BsMic className='icon' /></div>

@@ -1,4 +1,4 @@
-import {  useRef, useState } from "react"
+import {   useRef, useState } from "react"
 import FrontPage from "./FrontPage"
 import Introduction from "./Introduction";
 import Skill from "./Skill";
@@ -32,7 +32,7 @@ const Home = () => {
 
 const Main =()=>{
     //sidebar
-    const [open,setOpen] = useState<boolean>(false);
+    
 
     //isInview - navCircle
     const appear_targetRef = useRef<HTMLDivElement>(null);
@@ -52,15 +52,12 @@ const Main =()=>{
 
 
     return <div className="Main">
-        <FrontPage introSectionRef={introSectionRef}/>
-        <Introduction color_targetRef={color_targetRef} appear_targetRef={appear_targetRef} introSectionRef={introSectionRef}/>
-         <NavCircle  
-        isInView_Appear={isInView_Appear}
-        open={open} 
-        setOpen={setOpen} 
+        <FrontPage isInView_work_color={isInView_work_color} introSectionRef={introSectionRef}/>
+        <Introduction  color_targetRef={color_targetRef} appear_targetRef={appear_targetRef} introSectionRef={introSectionRef}/>
+        <NavCircle  
+        isInView_Appear={isInView_Appear} 
         IsInView_color={IsInView_color} />
-        <SideBar 
-        open={open} 
+        <SideBar  
         isInView_Appear={isInView_Appear} 
         IsInView_color={IsInView_color} />
         <Framework isInView_work_color={isInView_work_color} introSectionRef={introSectionRef}/>

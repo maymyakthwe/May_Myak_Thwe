@@ -7,13 +7,13 @@ export type project = {
 }
 
 export type work = {
+    id:number,
     name: string,
     type:string,
     src: string,
-    video: boolean,
-    description: string,
     deployed: boolean,
-    techStack:'FullStack' | 'Front-End' | 'Back-End',
+    techStack:'FullStack' | 'FrontEnd' | 'Back-End',
     date:string,
-    link:string
+    link:string,
+    framework:string
 };

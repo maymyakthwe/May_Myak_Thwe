@@ -9,11 +9,13 @@
 
     --font-hero: "Lato",
         sans-serif; 
-
         --breakpoint-xl-plus:90rem;
         --breakpoint-lg-plus:72rem;
+        --breakpoint-md-plus:54rem;
         --breakpoint-sm-plus:42rem;
-        --breakpoint-xs:26rem;
+        --breakpoint-xs-plus: 32rem;
+        --breakpoint-xs:28rem;
+        --breakpoint-xxs:24rem;
 
 }
 
@@ -53,7 +55,7 @@ body {
 
 :root {
     --separator: rgb(219, 219, 219);
-    --text-background: rgb(239, 239, 239);
+    --text-background: hsl(0, 0%, 94%);
     --text-level: 95px;
     --intro-bg: #f3abb7;
     --intro-bg-darken: #b57f88;
