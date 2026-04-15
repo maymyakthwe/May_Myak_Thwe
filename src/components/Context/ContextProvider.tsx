@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from "react";
-import { SideBarContext } from "./context";
+import { SideBarContext } from "./Context";
 
 
 export function ContextProvider({ children }: { children: ReactNode }){
