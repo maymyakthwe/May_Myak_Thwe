@@ -3,7 +3,7 @@ import { useContext } from "react";
 // import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross1 } from "react-icons/rx";
-import { SideBarContext } from "../Context/context";
+import { SideBarContext } from "../Context/Context";
 
 
 type Props = {
