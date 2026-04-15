@@ -1,26 +1,37 @@
 import type {  work } from "../../Types";
 
 import follower_buffet_design from '../../../assets/follower_buffet_design.png'
+import Dev from '../../../assets/dev1.png'
 import furry_design from '../../../assets/furry_design.png'
 import education_design from '../../../assets/educationdesign.png'
 import nick_design from '../../../assets/nickdesign.png'
-import portfolio_design from '../../../assets/portfolio_design.png'
 
 
 export const WorkArray:Array<work>= [
     {
         id:1,
+        name:'DevSpace Portfolio',
+        type:'Developer Portfolio Website',
+        src:Dev,
+        deployed: true,
+        techStack:'FullStack' ,
+        date:"March, 2026",
+        link:'https://follower-buffet.vercel.app/',
+        framework:['Next.JS', 'Python',  'TypeScript', 'MongoDB']
+    },
+    {
+        id:2,
         name:'Follower Buffet',
         type:'SMM Website',
         src:follower_buffet_design,
         deployed: true,
         techStack:'FrontEnd' ,
-        date:"Dec, 2024",
+        date:"Jan, 2025",
         link:'https://follower-buffet.vercel.app/',
-        framework:'TypeScript'
+        framework:['React.JS', 'TypeScript']
     },
     {
-        id:2,
+        id:3,
         name:"Nick's Kitchen",
         type:'Recipes Sharing Website',
         src:nick_design,
@@ -28,18 +39,7 @@ export const WorkArray:Array<work>= [
         techStack:'FullStack' ,
         date:"Dec, 2024",
         link:'',
-        framework:'PHP'
-    },
-    {
-        id:3,
-        name:'My Portfolio',
-        type:'Former Portfolio Website',
-        src:portfolio_design,
-        deployed: true,
-        techStack:'FrontEnd' ,
-        date:"Sep, 2024",
-        link:'https://may-portfolio-theta.vercel.app/',
-        framework:'React.JS'
+        framework:['PHP']
     },
     {
         id:4,
@@ -50,7 +50,7 @@ export const WorkArray:Array<work>= [
         techStack:'FullStack' ,
         date:"Aug, 2024",
         link:'',
-        framework:'MERN Stack'
+        framework:['React.JS', 'Node.JS', 'Express', 'MongoDB']
     },
     {
         id:5,
@@ -61,6 +61,6 @@ export const WorkArray:Array<work>= [
         techStack:'FrontEnd' ,
         date:"Feb, 2024",
         link:'https://nora-hazel.vercel.app/',
-        framework:'React.JS'
+        framework:['React.JS', 'Tailwind CSS', 'TypeScript']
     }
     ];

@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom"
 import { WorkArray } from "./Skeleton/workArray"
 import FollowerBuffet from "./WorkList/FollowerBuffet";
-import Portfolio from "./WorkList/Portfolio";
-import Nora from "./WorkList/Nora";
 import EducationPage from "./WorkList/EducationPage";
 import Furry from "./WorkList/Furry";
+import Nick from "./WorkList/Nick";
+import DevSpace from "./WorkList/DevSpace";
 
 
 const WorkDetailsPage = () => {
@@ -19,9 +19,9 @@ const WorkDetailsPage = () => {
     
     return (
     <div className='w-screen h-screen flex bg-[#111]'>
-        {IntId===1&&<FollowerBuffet/>}
-        {IntId===2&&<Nora/>}
-        {IntId===3&&<Portfolio/>}
+        {IntId===1&&<DevSpace/>}
+        {IntId===2&&<FollowerBuffet/>}
+        {IntId===3&&<Nick/>}
         {IntId===4&&<Furry/>}
         {IntId===5&&<EducationPage/>}
     </div>

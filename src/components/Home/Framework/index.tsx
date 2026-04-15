@@ -9,7 +9,7 @@ type Props = {
 
   const animationArray = ['Specialized','In', 'FrontEnd', 'MERN', 'STACK','Is','My','Playground.'];
 
-  const techStackArray = ['HTML','CSS','JavaScript','ReactJS','TypeScript','NodeJS','PHP','MySQL','MongoDB','PostgreSQL'];
+  const techStackArray = ['HTML','CSS','JavaScript','ReactJS','Next.JS','TypeScript','NodeJS','PHP','MySQL','MongoDB','PostgreSQL'];
 
   
 

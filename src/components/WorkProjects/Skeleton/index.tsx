@@ -1,7 +1,6 @@
 import { useRef } from 'react'
 import { WorkArray } from './workArray'
 import WorkPrototype from './workPrototype'
-import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import {motion} from 'framer-motion'
 import NavBar from '../../Home/NavBar';
 import useMediaQuery from '../../Hooks/useMediaQuery';
@@ -13,7 +12,7 @@ const Skeleton = () => {
   
 
   return (
-    <div ref={scrollRef} className={isAboveMediumScreen?'w-screen h-[500vh] flex ':'w-screen h-max'}>
+    <div ref={scrollRef} className={isAboveMediumScreen?'w-screen flex ':'w-screen h-max'}>
         
         {/* nav bar */}
         <div  className='fixed pt-[20px] xl:pt-[40px] w-full  whitespace-nowrap text-center  text-xl text-[#f3f3f3] bg-[#111] sm:px-[100px] z-[1000] border-b-1 border-[#222] pb-5 xs:px-[50px] px-[20px]'>
@@ -80,23 +79,21 @@ const Skeleton = () => {
                 </motion.div>
           </div>
 
-          {/* gradient */}
-          <div className="fixed top-0 left-0 w-screen h-screen bg-gradient-to-b from-[#111]  via-[#111d] to-[#111e] ">
-          </div>
+        {/* gradient */}
+        <div className="fixed top-0 left-0 w-screen h-screen bg-gradient-to-b from-[#111]  via-[#111d] to-[#111e] ">
+        </div>
 
-      <div className={isAboveMediumScreen?'fixed flex w-full  h-screen top-0 left-0 sm:px-[100px]  xs:px-[50px] px-[20px] overflow-hidden ':'pt-[100px] w-screen h-max flex  justify-center'}>
+        {/* Main Content Area */}
+        <div className="container mx-auto px-[20px] sm:px-[50px] xl:px-[100px] pt-[120px] pb-[80px] z-[10] relative">
+            
+            {/* Responsive Grid Layout */}
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 xl:gap-12">
+            {WorkArray.map((work, idx) => (
+                <WorkPrototype key={idx} work={work} />
+            ))}
+            </div>
 
-          {/* work */}
-          <div className={isAboveMediumScreen?'my-auto flex ':'flex flex-col gap-5 py-5'}>
-            {WorkArray.map((work,idx)=>{
-                return <WorkPrototype key={idx} idx={idx} work={work} scrollRef={scrollRef}/>
-            })}
-          </div>
-
-          {/* scroll */}
-          {isAboveMediumScreen&&<p className='text-[#eee] fixed bottom-[30px] xl:bottom-[40px] flex  gap-[15px] items-center'>SCROLL TO VIEW MORE <span className='text-3xl text-[#ccc]'><FaRegArrowAltCircleRight /></span> </p>}
-
-      </div>
+            </div>
     </div>
   )
 }

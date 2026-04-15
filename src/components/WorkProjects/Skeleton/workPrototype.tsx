@@ -1,65 +1,94 @@
-import type { work } from '../../Types'
-import {motion, useScroll, useTransform} from 'framer-motion'
-import texture2 from '../../../assets/texture2.png'
-import { useIsShortScreen } from '../../Hooks/isShortHook';
-import useMediaQuery from '../../Hooks/useMediaQuery';
+import type { work } from '../../Types';
+import texture2 from '../../../assets/texture2.png';
+// Note: Framer Motion and useScroll hooks are no longer needed here
 
 type Props = {
-    work:work,
-    scrollRef:React.RefObject<HTMLDivElement | null>
-    idx:number
-}
+  work: work;
+};
 
-const WorkPrototype = ({idx,work,scrollRef}: Props) => {
-  const isAboveMediumScreen = useMediaQuery("(min-width:640px)")
-
-
-  const {scrollYProgress} = useScroll({
-    target:scrollRef,
-    offset:['start end','end start']
-  })
-
-   
-
-  const x = useTransform(scrollYProgress,[0.17,0.83/5*(idx+1)],['0%',`-${idx*100}%`])
-
-  
-  const isShortScreen = useIsShortScreen(600);
-
-  
-
+const WorkPrototype = ({ work }: Props) => {
   return (
-    <motion.div
-    
-      style={{x:isAboveMediumScreen?x:''}}
-     className={` w-max h-max  shrink-0 ${isAboveMediumScreen?'pr-[20px] ':''}`}>
-      <motion.div 
-      style={{backgroundImage:`url(${texture2})`,
-    backgroundSize:'cover'}}
-      className={`bg-[#111] rounded-[20px] p-[10px] border-1 border-[#333] relative  h-max ${isShortScreen?'flex flex-wrap   ':'xl:w-[450px]  w-[350px]'}`}>
+    <div className="w-full h-full flex flex-col">
+      <div 
+        style={{
+          backgroundImage: `url(${texture2})`,
+          backgroundSize: 'cover'
+        }}
+        className="flex-1 bg-[#151515] rounded-[20px] p-[15px] border border-[#333] hover:border-[#555] transition-colors duration-300 shadow-lg group flex flex-col"
+      >
         
-          <div className='xl:w-[430px] w-[330px] xl:h-[300px] h-[200px] rounded-[10px] overflow-hidden '>
-            <a href={`/work/${work.id}`}>
-            <div className='w-full h-full  hover:scale-[1.1] transition-all duration-[800ms] ease-in-out'>
-              <img className=' w-full h-full object-cover object-center' src={work.src} alt="" />
-            </div>
-            </a>
+        {/* Image Container */}
+        <a href={`/work/${work.id}`} className="block w-full aspect-video rounded-[10px] overflow-hidden mb-5">
+          <div className="w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-in-out">
+            <img 
+              className="w-full h-full object-cover object-center" 
+              src={work.src} 
+              alt={`${work.name} preview`} 
+            />
           </div>
-          <div className={`text-[#ddd]  ${isShortScreen?'w-[350px] pl-[20px]':'p-[10px]'}`}>
-            <a href={`/work/${work.id}`}><h1 className='xl:text-3xl font-bold my-[10px] text-2xl '>{work.name} <span>&#40;{work.type}&#41;</span></h1></a>
-            <p className='text-[#888] mb-[20px]'>{work.date}</p>
-            <div className='flex w-full'>
-              <div className='w-[50%] text-xl xl:text-2xl font-bold'>{work.deployed?'Deployed':'Not Deployed'}</div>
-              <div className='w-[50%] text-xl xl:text-2xl font-bold'>{work.techStack}</div>
-            </div>
-            <div className='pt-3 font-bold text-[#777]  cursor-pointer'>
-              {work.link?<a  href={work.link} target='_blank'>{work.link}</a>:<div>Live site is not available</div>}
-            </div>
-         
-        </div>
-      </motion.div>
-    </motion.div>
-  )
-}
+        </a>
 
-export default WorkPrototype
+        {/* Text Content */}
+        <div className="flex flex-col flex-1 px-2 pb-2">
+          
+          <a href={`/work/${work.id}`} className="block mb-1">
+            <h2 className="text-2xl xl:text-3xl font-bold text-[#f3f3f3] group-hover:text-white transition-colors">
+              {work.name} <span className="text-[#888] text-xl font-normal tracking-wide">({work.type})</span>
+            </h2>
+          </a>
+          
+          <p className="text-[#888] text-sm tracking-widest uppercase mb-6">{work.date}</p>
+          
+          {/* footer*/}
+          <div className="mt-auto">
+            {/* Added gap-4 so the tech stack and status don't collide */}
+            <div className=" justify-between items-end mb-4 border-b border-[#333] pb-4 gap-4">
+              
+              <div className="flex flex-wrap gap-2 justify-start  text-right mb-3">
+                {work.techStack && work.framework.map((tech, index) => (
+                  <span 
+                    key={index} 
+                    className="bg-[#222] border border-[#333] px-2 py-1 rounded-md text-xs font-medium text-[#ccc] hover:text-white transition-colors cursor-default"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+
+              {/* Added whitespace-nowrap to prevent line breaks on the status text */}
+              <div className="text-sm xl:text-base font-semibold text-[#aaa] whitespace-nowrap">
+                {work.deployed ? (
+                  <span className="text-green-500/80">● Deployed</span>
+                ) : (
+                  <span className="text-yellow-500/80">● Not Deployed</span>
+                )}
+              </div>
+              
+              
+
+            </div>
+
+            <div className="font-medium text-sm">
+              {work.link ? (
+                <a 
+                  href={work.link} 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="text-blue-400 hover:text-blue-300 transition-colors"
+                >
+                  View Live Site ↗
+                </a>
+              ) : (
+                <span className="text-[#555]">Live site is not available</span>
+              )}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default WorkPrototype;

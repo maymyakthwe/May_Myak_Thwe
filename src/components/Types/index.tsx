@@ -15,5 +15,5 @@ export type work = {
     techStack:'FullStack' | 'FrontEnd' | 'Back-End',
     date:string,
     link:string,
-    framework:string
+    framework:string[]
 };

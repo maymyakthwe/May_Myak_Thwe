@@ -33,7 +33,7 @@ const FollowerBuffet = () => {
             Follower Buffet <span className='text-[#5d5fe1]'>Social Media Marketing Landing Page</span>
         </div>
         <div className="flex text-[14px] sm:text-xl md-plus:text-2xl text-white leading-[1.6]">
-            <p >This project was built in just one week as a hands-on learning experience to master the fundamentals of <span className="font-bold ">Framer Motion</span> .</p>
+            <p >Follower Buffet is a sleek, single-page website designed for a fictional social media marketing service. This project was built in just one week as a hands-on learning experience to master the fundamentals of <span className="font-bold ">Framer Motion</span>. It&#39;s a simple project, but it taught me how to bring static components to life and turn basic UIs into more engaging, dynamic experiences.  </p>
         </div>
 
         {/* video */}

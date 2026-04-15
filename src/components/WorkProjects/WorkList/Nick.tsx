@@ -1,16 +1,17 @@
 import NavBar from "../../Home/NavBar"
 
 import DragSlider from "../../Home/dragSlider"
-import furry1 from '../../../assets/1.png'
-import furry6 from '../../../assets/6.png'
-import furry3 from '../../../assets/3.png'
-import furry7 from '../../../assets/7.png'
-import furry8 from '../../../assets/8.png'
+import nick1 from '../../../assets/nick1.png'
+import nick2 from '../../../assets/nick2.png'
+import nick3 from '../../../assets/nick3.png'
+import nick4 from '../../../assets/nick4.png'
+import nick5 from '../../../assets/nick5.png'
 
-const img:string[] = [furry1,furry6,furry3,furry7,furry8]
 
-const Furry = () => {
-   
+const img:string[] = [nick1,nick2,nick3,nick4,nick5]
+
+const Nick = () => {
+  
 
   return (
     <div className='w-screen h-max flex bg-[#111]'>
@@ -22,15 +23,15 @@ const Furry = () => {
        {/* main */}
        <div className="xl:w-[65%] w-[80%]  m-auto my-[120px]  ">
         <div className=' font-bold mb-[20px] sm:mb-[40px] text-[#eee] text-3xl sm:text-4xl md-plus:text-5xl lg:text-6xl'> 
-            Furry Friends Refuge <span className='text-[#8f9b74]'>Animal Shelter Website</span>
+            Nick's Kitchen <span className='text-[#c7231b]'>Simple CRUD Website Using PHP</span>
         </div>
         <div className="flex text-[14px] sm:text-xl md-plus:text-2xl text-white leading-[1.6]">
-            <p >This is the first full-stack website I built entirely on my own, using the MERN stack. It serves as a platform for managing animal shelter operations, showcasing pets for adoption, and handling user interactions.I implemented full CRUD operations, JWT-based authentication, secure user sessions, and handled complex many-to-many relationships in MongoDB. Since this project was created purely to study Node.js functionalities, I didn't focus on responsiveness and did not deploy it.</p>
+            <p >This project was one of my final assignments in 2nd year . This includes simple frontend design and basic CRUD operations written in <span className="font-bold ">PHP</span>.</p>
         </div>
 
        
 
-        <DragSlider img={img} color={'#5f674d'}/>
+        <DragSlider img={img} color={'#c7231b'}/>
 
 
        
@@ -43,14 +44,15 @@ const Furry = () => {
                 <p className="text-[12px] text-lg border-b-2 border-[#222] py-[30px]">NOT DEPLOYED</p>
             </div>
             <div className="w-[20%] text-[#ccc]">
-                <p className="text-[12px] text-lg border-b-2 border-[#222] py-[30px]">TYPESCRIPT</p>
+                <p className="text-[12px] text-lg border-b-2 border-[#222] py-[30px]">PHP</p>
             </div>
             <div className="w-[20%] text-[#ccc]">
                 <p className="text-[12px] text-lg border-b-2 border-[#222] py-[30px]">@2024</p>
             </div>
         </div>
 
-        
+        <div className="flex my-[20px] text-[12px] sm:text-xl text-[#cb4740] underline leading-[1.6] ">
+        </div>
     </div>
 </div>
 
@@ -58,4 +60,4 @@ const Furry = () => {
   )
 }
 
-export default Furry
+export default Nick
